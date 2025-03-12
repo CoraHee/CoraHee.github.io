@@ -8,7 +8,7 @@
     <link href="/2025/03/12/test/"/>
     <url>/2025/03/12/test/</url>
     
-    <content type="html"><![CDATA[<p>abaaba<br><img src="/test/IMG_7403.JPG" alt="haha"></p>]]></content>
+    <content type="html"><![CDATA[<p>abaaba</p><!-- ![haha](test/IMG_7403.JPG) -->]]></content>
     
     
     
