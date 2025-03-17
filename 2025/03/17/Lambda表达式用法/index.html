@@ -1,0 +1,806 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="https://github.com/CoraHee/pics/blob/main/flower.png?raw=true">
+  <link rel="icon" href="https://github.com/CoraHee/pics/blob/main/flower.png?raw=true">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="CaroHee">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Lambda 表达式是 Java 8 引入的一个重要特性，它允许你将函数作为参数传递给方法，或者将代码像数据一样传递。Lambda 表达式可以让代码更加简洁、易读。 基本语法Lambda 表达式的基本语法如下： 123(parameters) -&gt; expression&#x2F;&#x2F; 或:(parameters) -&gt; &#123; statements; &#125;   **paramete">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lambda表达式用法">
+<meta property="og:url" content="http://example.com/2025/03/17/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:site_name" content="Caro">
+<meta property="og:description" content="Lambda 表达式是 Java 8 引入的一个重要特性，它允许你将函数作为参数传递给方法，或者将代码像数据一样传递。Lambda 表达式可以让代码更加简洁、易读。 基本语法Lambda 表达式的基本语法如下： 123(parameters) -&gt; expression&#x2F;&#x2F; 或:(parameters) -&gt; &#123; statements; &#125;   **paramete">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-17T11:55:11.000Z">
+<meta property="article:modified_time" content="2025-03-17T11:58:44.897Z">
+<meta property="article:author" content="CaroHee">
+<meta property="article:tag" content="基础语法">
+<meta property="article:tag" content="力扣总结">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Lambda表达式用法 - Caro</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/mycustom/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"J7JofXXC1ABDiuElX6JLs7nR-gzGzoHsz","app_key":"Hj9l7O4RQmZQyY9M6BhNSksF","server_url":"https://j7jofxxc.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2025-03-14T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Caro 🎀</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Lambda表达式用法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-17 19:55" pubdate>
+          March 17, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> visits
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Lambda表达式用法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>Lambda 表达式是 Java 8 引入的一个重要特性，它允许你将函数作为参数传递给方法，或者将代码像数据一样传递。Lambda 表达式可以让代码更加简洁、易读。</p>
+<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><p>Lambda 表达式的基本语法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">(parameters) -&gt; expression<br><span class="hljs-comment">// 或:</span><br>(parameters) -&gt; &#123; statements; &#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>**<code>parameters</code>**：参数列表，可以为空，也可以包含一个或多个参数。如果只有一个参数，括号可以省略。</li>
+<li>**<code>-&gt;</code>**：箭头符号，用于分隔参数列表和 Lambda 表达式的主体。</li>
+<li>**<code>expression</code>**：表达式，如果 Lambda 表达式只包含一个表达式，不需要使用大括号，并且表达式的结果会作为 Lambda 表达式的返回值。</li>
+<li>**<code>&#123; statements; &#125;</code>**：语句块，如果 Lambda 表达式包含多个语句，需要使用大括号将语句括起来，并且可以使用 <code>return</code> 语句返回值。</li>
+</ul>
+<h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>Lambda 表达式通常用于函数式接口。函数式接口是指只包含一个抽象方法的接口。Java 中有许多内置的函数式接口，如 <code>Comparator</code>、<code>Runnable</code>、<code>Consumer</code> 等。下面通过不同的示例来介绍 Lambda 表达式的使用。</p>
+<h2 id="1-使用-Lambda-表达式实现-Runnable-接口"><a href="#1-使用-Lambda-表达式实现-Runnable-接口" class="headerlink" title="1. 使用 Lambda 表达式实现 Runnable 接口"></a>1. 使用 Lambda 表达式实现 <code>Runnable</code> 接口</h2><p><code>Runnable</code> 接口是一个函数式接口，它只包含一个抽象方法 <code>run()</code>。可以使用 Lambda 表达式来实现 <code>Runnable</code> 接口。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LambdaRunnableExample</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 使用 Lambda 表达式实现 Runnable 接口</span><br>        <span class="hljs-type">Runnable</span> <span class="hljs-variable">task</span> <span class="hljs-operator">=</span> () -&gt; &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;<br>                System.out.println(<span class="hljs-string">&quot;Task is running: &quot;</span> + i);<br>            &#125;<br>        &#125;;<br><br>        <span class="hljs-comment">// 创建一个线程并启动</span><br>        <span class="hljs-type">Thread</span> <span class="hljs-variable">thread</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(task);<br>        thread.start();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在这个示例中，使用 Lambda 表达式 <code>() -&gt; &#123; ... &#125;</code> 实现了 <code>Runnable</code> 接口的 <code>run()</code> 方法。</p>
+<hr>
+<p>‼️ 在 Java 中，Lambda 表达式通过<strong>目标类型推断</strong>和<strong>函数式接口</strong>的特性，<strong>隐式地</strong>实现了 <code>Runnable</code> 接口的 <code>run()</code> 方法。</p>
+<h4 id="（一）核心原理：函数式接口与目标类型推断"><a href="#（一）核心原理：函数式接口与目标类型推断" class="headerlink" title="（一）核心原理：函数式接口与目标类型推断"></a>（一）核心原理：函数式接口与目标类型推断</h4><h5 id="1-Runnable-是函数式接口"><a href="#1-Runnable-是函数式接口" class="headerlink" title="1. Runnable 是函数式接口"></a>1. <code>Runnable</code> 是函数式接口</h5><p><code>Runnable</code> 接口的定义如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@FunctionalInterface</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Runnable</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong><code>@FunctionalInterface</code></strong> 注解标记该接口为函数式接口，即<strong>仅含一个抽象方法</strong>（此处为 <code>run()</code>）。</li>
+<li>函数式接口的设计目的是为 Lambda 表达式提供目标类型。</li>
+</ul>
+<h5 id="2-Lambda-表达式的类型匹配规则"><a href="#2-Lambda-表达式的类型匹配规则" class="headerlink" title="2. Lambda 表达式的类型匹配规则"></a>2. Lambda 表达式的类型匹配规则</h5><p>当 Lambda 表达式出现在函数式接口的上下文（如变量声明、方法参数）时，<strong>编译器会自动将其匹配到接口的唯一抽象方法</strong>。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Runnable</span> <span class="hljs-variable">task</span> <span class="hljs-operator">=</span> () -&gt; &#123; <span class="hljs-comment">/* 代码 */</span> &#125;;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong><code>()</code></strong> 匹配 <code>run()</code> 的无参数签名。</li>
+<li><strong><code>&#123; /\* 代码 \*/ &#125;</code></strong> 匹配 <code>run()</code> 的方法体。</li>
+</ul>
+<h4 id="（二）隐式实现的底层机制"><a href="#（二）隐式实现的底层机制" class="headerlink" title="（二）隐式实现的底层机制"></a>（二）隐式实现的底层机制</h4><h5 id="1-匿名内部类对比（传统写法）"><a href="#1-匿名内部类对比（传统写法）" class="headerlink" title="1. 匿名内部类对比（传统写法）"></a>1. 匿名内部类对比（传统写法）</h5><p>在 Java 8 之前，实现 <code>Runnable</code> 需要显式写匿名内部类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Runnable</span> <span class="hljs-variable">task</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 代码</span><br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p>Lambda 表达式本质上是匿名内部类的<strong>语法糖</strong>，两者在编译后生成的字节码功能相同，但 Lambda 更简洁。</p>
+<h5 id="2-编译器的转换过程"><a href="#2-编译器的转换过程" class="headerlink" title="2. 编译器的转换过程"></a>2. 编译器的转换过程</h5><p>当编译器遇到 <code>() -&gt; &#123; ... &#125;</code> 时：</p>
+<ol>
+<li>检查目标类型是否为函数式接口（此处为 <code>Runnable</code>）。</li>
+<li>将 Lambda 表达式的参数列表和方法体映射到接口的抽象方法（<code>run()</code>）。</li>
+<li>生成等价的匿名内部类实现。</li>
+</ol>
+<h4 id="（三）代码示例对比"><a href="#（三）代码示例对比" class="headerlink" title="（三）代码示例对比"></a>（三）代码示例对比</h4><h5 id="1-显式实现（匿名内部类）"><a href="#1-显式实现（匿名内部类）" class="headerlink" title="1. 显式实现（匿名内部类）"></a>1. 显式实现（匿名内部类）</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Runnable</span> <span class="hljs-variable">task</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;Running via anonymous class&quot;</span>);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-隐式实现（Lambda-表达式）"><a href="#2-隐式实现（Lambda-表达式）" class="headerlink" title="2. 隐式实现（Lambda 表达式）"></a>2. 隐式实现（Lambda 表达式）</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Runnable</span> <span class="hljs-variable">task</span> <span class="hljs-operator">=</span> () -&gt; &#123;<br>    System.out.println(<span class="hljs-string">&quot;Running via Lambda&quot;</span>);<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-等价性验证"><a href="#3-等价性验证" class="headerlink" title="3. 等价性验证"></a>3. 等价性验证</h5><p>两者执行效果完全相同：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">task.run(); <span class="hljs-comment">// 输出 &quot;Running via Lambda&quot; 或 &quot;Running via anonymous class&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="（四）为什么不需要显式写-run-？"><a href="#（四）为什么不需要显式写-run-？" class="headerlink" title="（四）为什么不需要显式写 run()？"></a>（四）为什么不需要显式写 <code>run()</code>？</h4><h5 id="1-函数式接口的约束"><a href="#1-函数式接口的约束" class="headerlink" title="1. 函数式接口的约束"></a>1. 函数式接口的约束</h5><p>由于 <code>Runnable</code> 只有一个抽象方法 <code>run()</code>，编译器可以<strong>唯一确定</strong> Lambda 表达式应匹配该方法。</p>
+<h5 id="2-类型推断的作用"><a href="#2-类型推断的作用" class="headerlink" title="2. 类型推断的作用"></a>2. 类型推断的作用</h5><p>编译器通过上下文（变量类型为 <code>Runnable</code>）推断出 Lambda 必须实现 <code>run()</code> 方法，无需显式声明方法名。</p>
+<h4 id="（五）常见误区澄清"><a href="#（五）常见误区澄清" class="headerlink" title="（五）常见误区澄清"></a>（五）常见误区澄清</h4><h5 id="误区-1：Lambda-是匿名类的替代"><a href="#误区-1：Lambda-是匿名类的替代" class="headerlink" title="误区 1：Lambda 是匿名类的替代"></a>误区 1：Lambda 是匿名类的替代</h5><p>正确理解：Lambda 是函数式接口的<strong>更简洁实现方式</strong>，底层仍通过匿名类实现，但语法更紧凑。</p>
+<h5 id="误区-2：Lambda-必须显式指定方法名"><a href="#误区-2：Lambda-必须显式指定方法名" class="headerlink" title="误区 2：Lambda 必须显式指定方法名"></a>误区 2：Lambda 必须显式指定方法名</h5><p>正确理解：Lambda 通过目标类型推断自动匹配接口的抽象方法，无需显式写方法名。</p>
+<hr>
+<h2 id="2-使用-Lambda-表达式实现-Comparator-接口"><a href="#2-使用-Lambda-表达式实现-Comparator-接口" class="headerlink" title="2. 使用 Lambda 表达式实现 Comparator 接口"></a>2. 使用 Lambda 表达式实现 <code>Comparator</code> 接口</h2><p><code>Comparator</code> 接口是一个函数式接口，它只包含一个抽象方法 <code>compare(T o1, T o2)</code>。可以使用 Lambda 表达式来实现 <code>Comparator</code> 接口，用于对集合进行排序。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.Collections;<br><span class="hljs-keyword">import</span> java.util.Comparator;<br><span class="hljs-keyword">import</span> java.util.List;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> &#123;<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> age;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Person</span><span class="hljs-params">(String name, <span class="hljs-type">int</span> age)</span> &#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>        <span class="hljs-built_in">this</span>.age = age;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getAge</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> age;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Person&#123;name=&#x27;&quot;</span> + name + <span class="hljs-string">&quot;&#x27;, age=&quot;</span> + age + <span class="hljs-string">&quot;&#125;&quot;</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LambdaComparatorExample</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 创建一个包含 Person 对象的列表</span><br>        List&lt;Person&gt; people = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        people.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-number">25</span>));<br>        people.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-number">20</span>));<br>        people.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Charlie&quot;</span>, <span class="hljs-number">30</span>));<br><br>        <span class="hljs-comment">// 使用 Lambda 表达式实现 Comparator 接口</span><br>        Comparator&lt;Person&gt; ageComparator = (p1, p2) -&gt; p1.getAge() - p2.getAge();<br><br>        <span class="hljs-comment">// 对列表进行排序</span><br>        Collections.sort(people, ageComparator);<br><br>        <span class="hljs-comment">// 输出排序后的列表</span><br>        <span class="hljs-keyword">for</span> (Person person : people) &#123;<br>            System.out.println(person);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在这个示例中，使用 Lambda 表达式 <code>(p1, p2) -&gt; p1.getAge() - p2.getAge()</code> 实现了 <code>Comparator&lt;Person&gt;</code> 接口的 <code>compare()</code> 方法，用于按照年龄对 <code>Person</code> 对象进行排序。</p>
+<h2 id="3-使用-Lambda-表达式处理集合"><a href="#3-使用-Lambda-表达式处理集合" class="headerlink" title="3. 使用 Lambda 表达式处理集合"></a>3. 使用 Lambda 表达式处理集合</h2><p>Java 8 引入了 Stream API，它提供了许多方法来处理集合。可以使用 Lambda 表达式来定义这些方法的行为。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.List;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LambdaStreamExample</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 创建一个包含整数的列表</span><br>        List&lt;Integer&gt; numbers = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        numbers.add(<span class="hljs-number">1</span>);<br>        numbers.add(<span class="hljs-number">2</span>);<br>        numbers.add(<span class="hljs-number">3</span>);<br>        numbers.add(<span class="hljs-number">4</span>);<br>        numbers.add(<span class="hljs-number">5</span>);<br><br>        <span class="hljs-comment">// 使用 Lambda 表达式过滤出偶数并打印</span><br>        numbers.stream()<br>               .filter(n -&gt; n % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>)<br>               .forEach(System.out::println);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在这个示例中，使用 Lambda 表达式 <code>n -&gt; n % 2 == 0</code> 作为 <code>filter()</code> 方法的参数，用于过滤出列表中的偶数。然后使用方法引用 <code>System.out::println</code> 作为 <code>forEach()</code> 方法的参数，用于打印过滤后的元素。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Lambda 表达式的使用步骤如下：</p>
+<ol>
+<li>确定需要实现的函数式接口。</li>
+<li>根据函数式接口的抽象方法定义 Lambda 表达式的参数列表和返回值。</li>
+<li>使用 Lambda 表达式实现函数式接口的抽象方法。</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E6%B3%95/" class="category-chain-item">编程语法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="print-no-link">#基础语法</a>
+      
+        <a href="/tags/%E5%8A%9B%E6%89%A3%E6%80%BB%E7%BB%93/" class="print-no-link">#力扣总结</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Lambda表达式用法</div>
+      <div>http://example.com/2025/03/17/Lambda表达式用法/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>CaroHee</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>March 17, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/03/17/%E5%90%88%E5%B9%B6k%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" title="合并k个有序链表">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">合并k个有序链表</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/12/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"J7JofXXC1ABDiuElX6JLs7nR-gzGzoHsz","appKey":"Hj9l7O4RQmZQyY9M6BhNSksF","path":"window.location.pathname","placeholder":"Say something :)","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        Visits 🌱
+        <span id="leancloud-site-pv"></span>
+         
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        Visitors 👤
+        <span id="leancloud-site-uv"></span>
+        
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/mycustom/custom.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
