@@ -19,15 +19,15 @@
   <meta name="author" content="CaroHee">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Lambda 表达式是 Java 8 引入的一个重要特性，它允许你将函数作为参数传递给方法，或者将代码像数据一样传递。Lambda 表达式可以让代码更加简洁、易读。 基本语法Lambda 表达式的基本语法如下： 123(parameters) -&gt; expression&#x2F;&#x2F; 或:(parameters) -&gt; &#123; statements; &#125;   **paramete">
+    <meta name="description" content="Lambda 表达式是 Java 8 引入的一个重要特性，它允许你将函数作为参数传递给方法，或者将代码像数据一样传递。Lambda 表达式可以让代码更加简洁、易读。 基本语法Lambda 表达式的基本语法如下： 123(parameters) -&gt; expression&#x2F;&#x2F; 或:(parameters) -&gt; &#123; statements; &#125;   parameters">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lambda表达式用法">
 <meta property="og:url" content="http://example.com/2025/03/17/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%94%A8%E6%B3%95/index.html">
 <meta property="og:site_name" content="Caro">
-<meta property="og:description" content="Lambda 表达式是 Java 8 引入的一个重要特性，它允许你将函数作为参数传递给方法，或者将代码像数据一样传递。Lambda 表达式可以让代码更加简洁、易读。 基本语法Lambda 表达式的基本语法如下： 123(parameters) -&gt; expression&#x2F;&#x2F; 或:(parameters) -&gt; &#123; statements; &#125;   **paramete">
+<meta property="og:description" content="Lambda 表达式是 Java 8 引入的一个重要特性，它允许你将函数作为参数传递给方法，或者将代码像数据一样传递。Lambda 表达式可以让代码更加简洁、易读。 基本语法Lambda 表达式的基本语法如下： 123(parameters) -&gt; expression&#x2F;&#x2F; 或:(parameters) -&gt; &#123; statements; &#125;   parameters">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-17T11:55:11.000Z">
-<meta property="article:modified_time" content="2025-03-17T11:58:44.897Z">
+<meta property="article:modified_time" content="2025-03-17T12:06:55.524Z">
 <meta property="article:author" content="CaroHee">
 <meta property="article:tag" content="基础语法">
 <meta property="article:tag" content="力扣总结">
@@ -308,10 +308,10 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">(parameters) -&gt; expression<br><span class="hljs-comment">// 或:</span><br>(parameters) -&gt; &#123; statements; &#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li>**<code>parameters</code>**：参数列表，可以为空，也可以包含一个或多个参数。如果只有一个参数，括号可以省略。</li>
-<li>**<code>-&gt;</code>**：箭头符号，用于分隔参数列表和 Lambda 表达式的主体。</li>
-<li>**<code>expression</code>**：表达式，如果 Lambda 表达式只包含一个表达式，不需要使用大括号，并且表达式的结果会作为 Lambda 表达式的返回值。</li>
-<li>**<code>&#123; statements; &#125;</code>**：语句块，如果 Lambda 表达式包含多个语句，需要使用大括号将语句括起来，并且可以使用 <code>return</code> 语句返回值。</li>
+<li><code>parameters</code>：参数列表，可以为空，也可以包含一个或多个参数。如果只有一个参数，括号可以省略。</li>
+<li><code>-&gt;</code>：箭头符号，用于分隔参数列表和 Lambda 表达式的主体。</li>
+<li><code>expression</code>：表达式，如果 Lambda 表达式只包含一个表达式，不需要使用大括号，并且表达式的结果会作为 Lambda 表达式的返回值。</li>
+<li><code>&#123; statements; &#125;</code>：语句块，如果 Lambda 表达式包含多个语句，需要使用大括号将语句括起来，并且可以使用 <code>return</code> 语句返回值。</li>
 </ul>
 <h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>Lambda 表达式通常用于函数式接口。函数式接口是指只包含一个抽象方法的接口。Java 中有许多内置的函数式接口，如 <code>Comparator</code>、<code>Runnable</code>、<code>Consumer</code> 等。下面通过不同的示例来介绍 Lambda 表达式的使用。</p>
 <h2 id="1-使用-Lambda-表达式实现-Runnable-接口"><a href="#1-使用-Lambda-表达式实现-Runnable-接口" class="headerlink" title="1. 使用 Lambda 表达式实现 Runnable 接口"></a>1. 使用 Lambda 表达式实现 <code>Runnable</code> 接口</h2><p><code>Runnable</code> 接口是一个函数式接口，它只包含一个抽象方法 <code>run()</code>。可以使用 Lambda 表达式来实现 <code>Runnable</code> 接口。</p>

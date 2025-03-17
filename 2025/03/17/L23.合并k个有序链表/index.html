@@ -27,7 +27,7 @@
 <meta property="og:description" content="力扣：23. 合并k个升序链表 难度：🔴 这题是合并两个有序链表的扩展，很简单的思路：创建一个新的链表，头节点为dummy，此时比较这k个链表的head，谁的值最小，那么谁就接到这个新链表后面，该节点的下一个节点成为它所在链表的新head（感觉像是在玩分类收纳小游戏）。 为了快速得到这k个head节点中，值最小的节点，可以考虑把它们放进一个最小堆，就可以得到值最小的那一个节点。 解法代码： 12">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-17T11:59:10.000Z">
-<meta property="article:modified_time" content="2025-03-17T12:03:10.621Z">
+<meta property="article:modified_time" content="2025-03-17T12:07:09.742Z">
 <meta property="article:author" content="CaroHee">
 <meta property="article:tag" content="力扣总结">
 <meta name="twitter:card" content="summary_large_image">
@@ -314,7 +314,7 @@
 <p>在这里可以注意到创建了最小堆的实例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">PriorityQueue&lt;ListNode&gt; pq = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PriorityQueue</span>&lt;&gt;(lists.length, (a, b) -&gt; (a.val - b.val));<br></code></pre></td></tr></table></figure>
 
-<p>其中，**<code>(a, b)-&gt;(a.val - b.val)</code>**是一个 Lambda 表达式，用于定义优先队列的比较器（<code>Comparator</code>）。比较器的作用是定义元素之间的优先级顺序。在这个 Lambda 表达式中，<code>a</code> 和 <code>b</code> 是两个 <code>ListNode</code> 对象，<code>a.val - b.val</code> 表示根据 <code>ListNode</code> 的 <code>val</code> 属性值进行比较。如果 <code>a.val - b.val</code> 的结果小于 0，则表示 <code>a</code> 的优先级高于 <code>b</code>；如果结果大于 0，则表示 <code>b</code> 的优先级高于 <code>a</code>；如果结果等于 0，则表示 <code>a</code> 和 <code>b</code> 的优先级相同。</p>
+<p>其中，<code>(a, b)-&gt;(a.val - b.val)</code>是一个 Lambda 表达式，用于定义优先队列的比较器（<code>Comparator</code>）。比较器的作用是定义元素之间的优先级顺序。在这个 Lambda 表达式中，<code>a</code> 和 <code>b</code> 是两个 <code>ListNode</code> 对象，<code>a.val - b.val</code> 表示根据 <code>ListNode</code> 的 <code>val</code> 属性值进行比较。如果 <code>a.val - b.val</code> 的结果小于 0，则表示 <code>a</code> 的优先级高于 <code>b</code>；如果结果大于 0，则表示 <code>b</code> 的优先级高于 <code>a</code>；如果结果等于 0，则表示 <code>a</code> 和 <code>b</code> 的优先级相同。</p>
 <a href="/2025/03/17/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%94%A8%E6%B3%95/" title="Lambda表达式用法">Lambda表达式用法</a>
 
 
